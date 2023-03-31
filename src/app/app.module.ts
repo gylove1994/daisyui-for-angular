@@ -1,3 +1,4 @@
+import { NgDaisyuiButtonModule } from './@theme/ng-daisyui-button/ng-daisyui-button.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    NgDaisyuiButtonModule,
     BrowserModule,
     AppRoutingModule
   ],
