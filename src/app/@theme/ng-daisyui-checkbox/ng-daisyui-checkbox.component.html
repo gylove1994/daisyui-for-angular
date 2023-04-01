@@ -1,0 +1,11 @@
+<div *ngIf="label" class="form-control">
+  <label class="label cursor-pointer">
+    <span class="label-text">{{label}}</span>
+    <input #labeled_input (blur)="onBlur()" [(ngModel)]='value' type="checkbox" checked="checked" class="checkbox" />
+  </label>
+  <label class="label" *ngIf="errorMessage | async">
+    <span class="label-text-alt text-red-500">{{errorMessage | async}}</span>
+  </label>
+</div>
+
+<input #input *ngIf="!label" (blur)="onBlur()" [(ngModel)]="value" type="checkbox" checked="checked" class="checkbox" />

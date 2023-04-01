@@ -1,0 +1,7 @@
+<div class="flex-1 flex flex-col bg-white mt-5 rounded-xl" [ngClass]="ngClass">
+  <span *ngIf="title" class="font-bold text-2xl pl-2">{{title}}</span>
+  <div *ngIf="title" class="divider mt-0"></div>
+  <div class="md:flex md:flex-wrap">
+    <ng-content></ng-content>
+  </div>
+</div>

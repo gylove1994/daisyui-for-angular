@@ -1,0 +1,13 @@
+<div class="form-control w-full">
+  <label class="label">
+    <span class="label-text">{{label}}</span>
+  </label>
+  <label class="input-group">
+    <span>{{formName}}</span>
+    <input #input [(ngModel)]="value" [type]="type" (blur)="onBlur()" [ngClass]="ngClass" [placeholder]="placeholder"
+      (blur)="onBlur()" class="input input-bordered flex-1" />
+  </label>
+  <label class="label" *ngIf="errorMessage | async">
+    <span class="label-text-alt text-red-500">{{errorMessage | async}}</span>
+  </label>
+</div>
