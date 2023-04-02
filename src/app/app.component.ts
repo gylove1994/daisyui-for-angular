@@ -1,3 +1,4 @@
+import { NgDaisyuiToastService } from './@theme/ng-daisyui-toast/ng-daisyui-toast.service';
 import { InputUtilsService } from './@theme/common/services/input-utils.service';
 import { BehaviorSubject, interval, map, pairwise, filter, tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private readonly inputUtilsService:InputUtilsService){}
+  constructor(
+    private readonly inputUtilsService:InputUtilsService,
+    private readonly toastService:NgDaisyuiToastService
+  ){}
   ngOnInit(): void {}
   title = 'daisyui-for-angular';
   formGroup = new FormGroup({
@@ -32,7 +36,9 @@ export class AppComponent implements OnInit {
     message: 'You must agree to the terms and conditions',
   });
 
-  onSubmit() {
+  async onSubmit() {
     this.inputUtilsService.markAllAsDirtyAndTouched(this.formGroup);
+    await this.toastService.show('Hello World!','info',3000);
+    console.log('Hello World!');
   }
 }
