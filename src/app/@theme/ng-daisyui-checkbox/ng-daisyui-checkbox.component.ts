@@ -1,4 +1,4 @@
-import { InputUtilsService } from './../common/services/input-utils.service';
+import { InputUtilsService } from '../ng-daisyui-input/input-utils.service';
 import { ControlValueAccessor } from '@angular/forms';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { customInputAccessor } from '../common/components/base-input.component';

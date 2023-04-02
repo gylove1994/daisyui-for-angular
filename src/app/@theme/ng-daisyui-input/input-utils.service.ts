@@ -1,9 +1,9 @@
 import { FormGroup } from '@angular/forms';
 import { BehaviorSubject, filter, interval, map, Observable, pairwise } from 'rxjs';
 import { Injectable } from "@angular/core";
-import { ErrorMessageOptions } from '../interface/error-message-options.interface';
+import { ErrorMessageOptions } from '../common/interface/error-message-options.interface';
 
-@Injectable({ providedIn: "root" })
+@Injectable()
 export class InputUtilsService {
   private inter = interval(10);
 

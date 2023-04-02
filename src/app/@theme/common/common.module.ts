@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeChangerService } from './services/theme-changer.service';
 
@@ -11,4 +11,11 @@ import { ThemeChangerService } from './services/theme-changer.service';
   ],
   exports: []
 })
-export class NgDaisyUICommonModule { }
+export class NgDaisyUICommonModule {
+  static forRoot(): ModuleWithProviders<NgDaisyUICommonModule> {
+    return {
+      ngModule: NgDaisyUICommonModule,
+      providers: [ThemeChangerService],
+    };
+  }
+}

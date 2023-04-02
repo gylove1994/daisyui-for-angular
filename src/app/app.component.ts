@@ -1,5 +1,5 @@
 import { NgDaisyuiToastService } from './@theme/ng-daisyui-toast/ng-daisyui-toast.service';
-import { InputUtilsService } from './@theme/common/services/input-utils.service';
+import { InputUtilsService } from './@theme/ng-daisyui-input/input-utils.service';
 import { BehaviorSubject, interval, map, pairwise, filter, tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';

@@ -2,7 +2,7 @@ import { Component, ElementRef, forwardRef, Input, OnInit, Renderer2, ViewChild 
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BehaviorSubject, filter, interval, map, Observable, pairwise } from 'rxjs';
 import { BaseInputComponent, customInputAccessor } from '../common/components/base-input.component';
-import { InputUtilsService } from '../common/services/input-utils.service';
+import { InputUtilsService } from './input-utils.service';
 
 @Component({
   selector: 'ng-daisyui-input',
