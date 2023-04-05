@@ -1,7 +1,8 @@
+import { NgDaisyuiModalService } from './@theme/ng-daisyui-modal/ng-daisyui-modal.service';
 import { NgDaisyuiToastService } from './@theme/ng-daisyui-toast/ng-daisyui-toast.service';
 import { InputUtilsService } from './@theme/ng-daisyui-input/input-utils.service';
 import { BehaviorSubject, interval, map, pairwise, filter, tap } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,8 +13,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   constructor(
     private readonly inputUtilsService:InputUtilsService,
-    private readonly toastService:NgDaisyuiToastService
+    private readonly toastService:NgDaisyuiToastService,
+    private readonly modalService:NgDaisyuiModalService
   ){}
+
+  @ViewChild('modal',{static:true})
+  modal!: TemplateRef<HTMLDivElement>;
+
   ngOnInit(): void {}
   title = 'daisyui-for-angular';
   formGroup = new FormGroup({
@@ -39,6 +45,8 @@ export class AppComponent implements OnInit {
   async onSubmit() {
     this.inputUtilsService.markAllAsDirtyAndTouched(this.formGroup);
     await this.toastService.show('Hello World!','info',3000);
-    console.log('Hello World!');
+    await this.modalService.open(this.modal,{close:this.modalService.getCloseFunction()});
   }
+
+  close = this.modalService.getCloseFunction();
 }

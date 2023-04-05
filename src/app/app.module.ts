@@ -1,3 +1,4 @@
+import { NgDaisyuiModalModule } from './@theme/ng-daisyui-modal/ng-daisyui-modal.module';
 import { NgDaisyuiToastModule } from './@theme/ng-daisyui-toast/ng-daisyui-toast.module';
 import { NgDaisyuiCheckboxModule } from './@theme/ng-daisyui-checkbox/ng-daisyui-checkbox.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,11 +16,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    NgDaisyuiModalModule.forRoot(),
     NgDaisyuiButtonModule,
     BrowserModule,
     AppRoutingModule,
     NgDaisyuiCardModule,
-    NgDaisyuiInputModule,
+    NgDaisyuiInputModule.forRoot(),
     NgDaisyuiCheckboxModule,
     NgDaisyuiToastModule.forRoot(),
     ReactiveFormsModule,

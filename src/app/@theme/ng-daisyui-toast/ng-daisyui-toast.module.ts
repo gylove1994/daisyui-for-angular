@@ -6,8 +6,6 @@ import { NgDaisyuiToastService } from './ng-daisyui-toast.service';
 @NgModule({
   declarations: [NgDaisyuiToastComponent],
   imports: [CommonModule],
-  exports: [NgDaisyuiToastComponent],
-  bootstrap: [NgDaisyuiToastComponent]
 })
 export class NgDaisyuiToastModule {
   static forRoot(): ModuleWithProviders<NgDaisyuiToastModule> {
